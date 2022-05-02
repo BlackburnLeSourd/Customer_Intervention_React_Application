@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Form, { form } from "react-validation/build/form";
+import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import AuthService from "../service/auth.service";
+import AuthService from "../services/auth.service";
 
 const required = (value) => {
     if (!value) {
@@ -18,6 +18,7 @@ const required = (value) => {
 const Login = () => {
     let navigate = useNavigate();
     const form = useRef();
+    const checkBtn = useRef();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
